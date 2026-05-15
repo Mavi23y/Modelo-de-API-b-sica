@@ -1,0 +1,84 @@
+Banco de dados: 
+create database nomeDoSeu;
+
+use nomeDoSeu;
+
+create table nomeDaSua(
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(100) NOT NULL, 
+email VARCHAR(100) UNIQUE NOT NULL,
+senha VARCHAR(100) NOT NULL,
+foto_url VARCHAR(100)
+);
+
+select * from nomeDaSua;
+
+API:
+Dependências básicas
+npm init -y
+npm install express 
+npm install -d dotenv 
+npm install -d mysql2
+npm install -D nodemon 
+npm install -d cors
+
+
+Pastas básicas:
+/nome-do-projeto
+├── /src
+│   ├── /config       # Configurações de conexão (ex: db.js)
+│   ├── /controllers  # Lógica das rotas (o que acontece em cada endpoint)
+│   ├── /routes       # Definição dos caminhos (GET, POST, etc.)
+│   ├── /models       # (Opcional) Estrutura dos dados
+│   └── server.js     # Arquivo principal que inicia o servidor
+├── .env              # Variáveis sensíveis (senhas, portas)
+├── .gitignore        # Arquivos que o Git deve ignorar (ex: node_modules)
+└── package.json      # Suas dependências e scripts
+
+
+.env deve ter:
+PORT=3001
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=suasenha
+DB_NAME=nomeDoSeu
+Dentro do .gitignore:
+​node_modules/
+​.env
+
+Métodos HTTP
+GET - listar
+POST - criar 
+PUT - editar vários 
+PATCH - editar um 
+DELETE - deletar 
+Após baixar adiciona nos scripts 
+"start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+
+testa em 
+http://localhost:3000/usuarios/teste
+
+Routers.js
+// 1 tipo de rota/método http
+// endereço http://localhost:3000/usuarios/teste
+router.get('/teste', (req, res) => {
+    res.json({ mensagem: "Rota de teste funcionando!" });
+});
+
+Conexão do back com o front 
+ <button onclick="testar()">Chamar API</button>
+ 
+    <div id="dados"></div>
+
+Script.js
+async function testar() {
+    const resposta = await fetch('http://localhost:3000/usuarios/teste');
+    const dados = await resposta.json();
+    // console.log(dados); // { mensagem: "Rota de teste funcionando!" }
+    document.getElementById("dados").innerHTML = dados.mensagem;
+  }
+
+
+ Roda com npm run dev 
+
