@@ -52,6 +52,8 @@ POST - criar
 PUT - editar vários 
 PATCH - editar um 
 DELETE - deletar 
+
+
 Após baixar adiciona nos scripts 
 "start": "node src/index.js",
     "dev": "nodemon src/index.js"
@@ -82,3 +84,24 @@ async function testar() {
 
  Roda com npm run dev 
 
+
+// POST   /usuarios/cadastrar  → cadastra
+// POST   /usuarios/login      → loga
+// GET    /usuarios/           → lista todos
+// PUT    /usuarios/:id        → atualiza por ID
+// DELETE /usuarios/:id        → deleta por ID
+
+
+# MEU MODELO DB 
+# create database DBbase;
+
+# use DBbase;
+
+# create table user(
+# id INT PRIMARY KEY AUTO_INCREMENT,
+# nome VARCHAR(100) NOT NULL, 
+# email VARCHAR(100) UNIQUE NOT NULL,
+# senha VARCHAR(100) NOT NULL
+# );
+
+# select * from user;

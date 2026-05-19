@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ApiBase</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
- <button onclick="testar()">Chamar API</button>
 
+    <button onclick="testar()">Chamar API</button>
     <div id="dados"></div>
 
-   <h2>Cadastro</h2>
+    <hr>
+
+    <h2>Cadastro</h2>
     <input type="text"     id="cad-nome"  placeholder="Nome" /><br>
     <input type="email"    id="cad-email" placeholder="Email" /><br>
     <input type="password" id="cad-senha" placeholder="Senha" /><br>
@@ -25,8 +26,12 @@
     <input type="password" id="log-senha" placeholder="Senha" /><br>
     <button onclick="login()">Entrar</button>
 
-    <p id="mensagem"></p>
+    <hr>
 
+    <h2>Usuários Cadastrados</h2>
+    <ul id="lista-usuarios"></ul>
+
+    <p id="mensagem"></p>
 
     <script src="script.js"></script>
 </body>
